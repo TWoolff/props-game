@@ -1,0 +1,41 @@
+.answer-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between
+}
+
+.answer-container .btn {
+  padding: 1rem 0;
+  width: 23%;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 0.8rem;
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #000;
+  -webkit-transition: all 450ms cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition: all 450ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 450ms cubic-bezier(0.19, 1, 0.22, 1)
+}
+
+.answer-container .btn:hover {
+  background-color: #fff;
+  color: #000
+}
+
+@media (max-width: 768px) {
+   .answer-container .btn {
+    width: 100%;
+    margin: 0.1rem 0
+  }
+}
+
+@media (max-width: 768px) {
+  .answer-container {
+    display: block
+  }
+}

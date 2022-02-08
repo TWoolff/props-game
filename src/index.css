@@ -1,13 +1,175 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+  padding: 0
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+html,
+body {
+  overflow-x: hidden;
+  background-color: #fff;
+  height: 100%
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom
+}
+
+a {
+  text-decoration: none
+}
+
+a:hover,
+a:focus,
+a:active {
+  outline: 0
+}
+
+main {
+  margin: 0;
+  overflow: hidden;
+  min-height: 100vh;
+  padding-bottom: 2rem;
+  display: block;
+  position: relative
+}
+
+@font-face {
+  font-family: 'Integral';
+  src: url("./assets/fonts/integral-cf-heavy.woff") format("woff"), url("./assets/fonts/integral-cf-heavy.ttf") format("truetype");
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: 300
+}
+
+html,
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-os-font-smoothing: grayscale;
+  color: #000;
+  word-wrap: normal
+}
+
+@media (max-width: 768px) {
+
+  html,
+  body {
+    font-size: 14px;
+    line-height: 16px
+  }
+}
+
+.header_font,
+h1,
+h2 {
+  font-family: 'Integral', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0
+}
+
+.regular_font,
+h3 {
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4rem;
+  letter-spacing: 0.5px
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: 1
+}
+
+h2 {
+  font-size: 2.5rem
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 800
+}
+
+main {
+  display: grid;
+  grid-template-columns: minmax(300px, 1200px);
+  grid-template-rows: 7rem 1fr;
+  grid-template-areas: "head""scene";
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center
+}
+
+header {
+  grid-area: head
+}
+
+.content {
+  grid-area: scene
+}
+
+header {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #fff;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center
+}
+
+.correct,
+.incorrect {
+  pointer-events: none;
+  top: 7rem
+}
+
+.correct:after,
+.incorrect:after {
+  display: block;
+  position: absolute;
+  top: 8rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  font-size: 3rem;
+  font-weight: 900;
+  -webkit-text-fill-color: #fff;
+  -webkit-text-stroke-width: 2px
+}
+
+.correct::after {
+  content: 'Korrekt';
+  -webkit-text-stroke-color: green
+}
+
+.incorrect::after {
+  content: 'Forkert';
+  -webkit-text-stroke-color: red
 }
