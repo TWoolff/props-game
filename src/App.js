@@ -506,8 +506,8 @@ function App() {
       <header className="App-header">
         <h1>Filmquizzen</h1>
       </header>
-      <Drawing data={randomDrawing}/>
-      <Answer data={randomDrawing} />
+      <Drawing data={randomDrawing.img} />
+      <Answer data={randomDrawing.answers} />
       <Score data={randomDrawing} />
     </main>
   );
