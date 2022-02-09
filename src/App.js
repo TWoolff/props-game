@@ -1,6 +1,4 @@
-import Drawing from "./components/Drawing";
-import Answer from "./components/Answer";
-import Score from "./components/Score";
+import { useState } from "react";
 
 function App() {
   const data = [{
@@ -500,15 +498,43 @@ function App() {
     }]
   }]
 
-  const randomDrawing = data[Math.floor(Math.random() * data.length)]
+  const [currentDrawing, setCurrentDrawing] = useState(0)
+  const [score, setScore] = useState(0)
+  const [showGameOver, setShowGameOver] = useState(false)
+  
+  const handleClick = (correct) => {
+    if (correct) {
+      setScore(score + 1) 
+    }
+
+    if (currentDrawing + 1 < data.length) {
+      setCurrentDrawing(currentDrawing + 1)
+    } else {
+      setShowGameOver(true)
+    }  
+  }
+
+  const handleRestart = () => {
+    setCurrentDrawing(0)
+    setScore(0)
+    setShowGameOver(false)
+  }
   return (
     <main className="App">
-      <header className="App-header">
+      <header>
         <h1>Filmquizzen</h1>
-      </header>
-      <Drawing data={randomDrawing.img} />
-      <Answer data={randomDrawing.answers} />
-      <Score data={randomDrawing} />
+      </header> 
+      <section className="drawing-container">
+        {showGameOver ? ( <h2>GAME OVER</h2>) : (<img src={`/img/${data[currentDrawing].img}`} alt="drawing"/>)}  
+      </section>
+      <section className="answer-container">
+        {showGameOver ? ( <button className="btn center" onClick={handleRestart}>Restart</button> ) : (data[currentDrawing].answers.map(answers => <button key={answers.text} className='btn' onClick={() => handleClick(answers.correct)}>{answers.text}</button>))}    
+      </section>
+      <section className="score-container">
+        <aside className="circle">
+          <h3>{score}/{data.length}</h3>
+        </aside>
+      </section>
     </main>
   );
 }
