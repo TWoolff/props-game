@@ -1,5 +1,5 @@
-const data = [{
-  img: './assets/img/06.jpg',
+let data = [{
+  img: '06.jpg',
   answers: [{
     text: "Indiana Jones",
     correct: !0
@@ -14,7 +14,7 @@ const data = [{
     correct: !1
   }]
 }, {
-  img: './assets/img/11.jpg',
+  img: '11.jpg',
   answers: [{
     text: "Mary Poppins",
     correct: !1
@@ -29,7 +29,7 @@ const data = [{
     correct: !1
   }]
 }, {
-  img: './assets/img/01.jpg',
+  img: '01.jpg',
   answers: [{
     text: "Beetlejuice",
     correct: !1
@@ -44,7 +44,7 @@ const data = [{
     correct: !1
   }]
 }, {
-  img: './assets/img/15.jpg',
+  img: '15.jpg',
   answers: [{
     text: "Sharknado",
     correct: !1
@@ -59,7 +59,7 @@ const data = [{
     correct: !0
   }]
 }, {
-  img: './assets/img/09.jpg',
+  img: '09.jpg',
   answers: [{
     text: "The Ring",
     correct: !1
@@ -74,7 +74,7 @@ const data = [{
     correct: !1
   }]
 }, {
-  img: './assets/img/13.jpg',
+  img: '13.jpg',
   answers: [{
     text: "Titanic",
     correct: !0
@@ -89,7 +89,7 @@ const data = [{
     correct: !1
   }]
 }, {
-  img: './assets/img/08.jpg',
+  img: '08.jpg',
   answers: [{
     text: "Neverending Story",
     correct: !1
@@ -104,7 +104,7 @@ const data = [{
     correct: !1
   }]
 }, {
-  img: './assets/img/17.jpg',
+  img: '17.jpg',
   answers: [{
     text: "Thrashin",
     correct: !1
@@ -119,7 +119,7 @@ const data = [{
     correct: !1
   }]
 }, {
-  img: './assets/img/12.jpg',
+  img: '12.jpg',
   answers: [{
     text: "War Horse",
     correct: !1
@@ -134,7 +134,7 @@ const data = [{
     correct: !1
   }]
 }, {
-  img: './assets/img/07.jpg',
+  img: '07.jpg',
   answers: [{
     text: "Terminator",
     correct: !1
@@ -149,7 +149,7 @@ const data = [{
     correct: !1
   }]
 }, {
-  img: './assets/img/16.jpg',
+  img: '16.jpg',
   answers: [{
     text: "Breakfast At Tiffanys",
     correct: !0
@@ -164,7 +164,7 @@ const data = [{
     correct: !1
   }]
 }, {
-  img: './assets/img/04.jpg',
+  img: '04.jpg',
   answers: [{
     text: "Hatches",
     correct: !1
@@ -179,7 +179,7 @@ const data = [{
     correct: !0
   }]
 }, {
-  img: './assets/img/14.jpg',
+  img: '14.jpg',
   answers: [{
     text: "Beetlejuice",
     correct: !0
@@ -194,7 +194,7 @@ const data = [{
     correct: !1
   }]
 }, {
-  img: './assets/img/02.jpg',
+  img: '02.jpg',
   answers: [{
     text: "Jungle Fever",
     correct: !1
@@ -209,7 +209,7 @@ const data = [{
     correct: !1
   }]
 }, {
-  img: './assets/img/05.jpg',
+  img: '05.jpg',
   answers: [{
     text: "Ex Machina",
     correct: !1
@@ -224,7 +224,7 @@ const data = [{
     correct: !0
   }]
 }, {
-  img: './assets/img/18.jpg',
+  img: '18.jpg',
   answers: [{
     text: "Heat",
     correct: !1
@@ -239,7 +239,7 @@ const data = [{
     correct: !1
   }]
 }, {
-  img: './assets/img/03.jpg',
+  img: '03.jpg',
   answers: [{
     text: "Fight Club",
     correct: !1
@@ -254,7 +254,7 @@ const data = [{
     correct: !0
   }]
 }, {
-  img: './assets/img/10.jpg',
+  img: '10.jpg',
   answers: [{
     text: "Olsen Banden",
     correct: !1
@@ -269,7 +269,7 @@ const data = [{
     correct: !1
   }]
 }, {
-  img: './assets/img/19.jpg',
+  img: '19.jpg',
   answers: [{
     text: "Fargo",
     correct: !0
@@ -284,7 +284,7 @@ const data = [{
     correct: !1
   }]
 }, {
-  img: './assets/img/20.jpg',
+  img: '20.jpg',
   answers: [{
     text: "Stranger Than Fiction",
     correct: !1
@@ -299,7 +299,7 @@ const data = [{
     correct: !0
   }]
 }, {
-  img: './assets/img/21.jpg',
+  img: '21.jpg',
   answers: [{
     text: "Soap",
     correct: !1
@@ -314,7 +314,7 @@ const data = [{
     correct: !1
   }]
 }, {
-  img: './assets/img/22.jpg',
+  img: '22.jpg',
   answers: [{
     text: "National Treasure",
     correct: !1
@@ -329,7 +329,7 @@ const data = [{
     correct: !1
   }]
 }, {
-  img: './assets/img/23.jpg',
+  img: '23.jpg',
   answers: [{
     text: "Bicycle Thieves",
     correct: !1
@@ -344,7 +344,7 @@ const data = [{
     correct: !0
   }]
 }, {
-  img: './assets/img/25.jpg',
+  img: '25.jpg',
   answers: [{
     text: "The Silence Of The Lambs",
     correct: !1
@@ -359,7 +359,7 @@ const data = [{
     correct: !1
   }]
 }, {
-  img: './assets/img/24.jpg',
+  img: '24.jpg',
   answers: [{
     text: "The Silence Of The Lambs",
     correct: !0
@@ -374,7 +374,7 @@ const data = [{
     correct: !1
   }]
 }, {
-  img: './assets/img/26.jpg',
+  img: '26.jpg',
   answers: [{
     text: "Paper Boats",
     correct: !1
@@ -389,7 +389,7 @@ const data = [{
     correct: !1
   }]
 }, {
-  img: './assets/img/27.jpg',
+  img: '27.jpg',
   answers: [{
     text: "The Beach",
     correct: !1
@@ -404,7 +404,7 @@ const data = [{
     correct: !1
   }]
 }, {
-  img: './assets/img/28.jpg',
+  img: '28.jpg',
   answers: [{
     text: "Mean Girls",
     correct: !0
@@ -419,7 +419,7 @@ const data = [{
     correct: !1
   }]
 }, {
-  img: './assets/img/29.jpg',
+  img: '29.jpg',
   answers: [{
     text: "Brides Maids",
     correct: !1
@@ -434,7 +434,7 @@ const data = [{
     correct: !0
   }]
 }, {
-  img: './assets/img/30.jpg',
+  img: '30.jpg',
   answers: [{
     text: "Sherlock Gnomes",
     correct: !1
@@ -449,7 +449,7 @@ const data = [{
     correct: !1
   }]
 }, {
-  img: './assets/img/31.jpg',
+  img: '31.jpg',
   answers: [{
     text: "Nightmare On Elm Street",
     correct: !0
@@ -464,7 +464,7 @@ const data = [{
     correct: !1
   }]
 }, {
-  img: './assets/img/32.jpg',
+  img: '32.jpg',
   answers: [{
     text: "Interstellar",
     correct: !1
@@ -479,7 +479,7 @@ const data = [{
     correct: !1
   }]
 }, {
-  img: './assets/img/33.jpg',
+  img: '33.jpg',
   answers: [{
     text: "Super Bad",
     correct: !0
@@ -494,3 +494,5 @@ const data = [{
     correct: !1
   }]
 }]
+
+export default data

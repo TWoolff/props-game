@@ -143,37 +143,18 @@ header {
   text-align: center
 }
 
-.correct,
-.incorrect {
-  pointer-events: none;
-  top: 7rem
-}
-
-.correct:after,
-.incorrect:after {
+.response-container {
   display: block;
   position: absolute;
-  top: 8rem;
+  top: 40%;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   font-size: 3rem;
   font-weight: 900;
-  -webkit-text-fill-color: #fff;
-  -webkit-text-stroke-width: 2px
+  pointer-events: none;
+  color: red;
+  text-transform: uppercase;
 }
-
-.correct::after {
-  content: 'Korrekt';
-  -webkit-text-stroke-color: green
-}
-
-.incorrect::after {
-  content: 'Forkert';
-  -webkit-text-stroke-color: red
-}
-
 
 .drawing-container {
   height: 60vh;
