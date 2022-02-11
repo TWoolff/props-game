@@ -2,39 +2,42 @@ import { useState } from "react";
 import data from './assets/data';
 
 function App() {
-  const drawings = data
-
+  const [drawings] = useState(data)
   const [currentDrawing, setCurrentDrawing] = useState(0)
   const [score, setScore] = useState(0)
-  const [response, setResponse] = useState('')
+  const [isCorrect, setIsCorrect] = useState(false)
+  const [isFalse, setIsFalse] = useState(false)
   const [showGameOver, setShowGameOver] = useState(false)
-  
+
   const handleClick = (correct) => {
     if (correct) {
-      setResponse('Korrekt')
+      setIsCorrect(true)
       setScore(score + 1) 
     } else {
-      setResponse('Forkert')
+      setIsFalse(true)
     }
 
     if (currentDrawing + 1 < drawings.length) {
       setTimeout(() => {
         setCurrentDrawing(currentDrawing + 1)
-        setResponse('')
-      }, 500) 
+        setIsCorrect(false)
+        setIsFalse(false)
+      }, 1000) 
     } else {
       setTimeout(() => {
-        setResponse('')
+        setIsCorrect(false)
+        setIsFalse(false)
         setShowGameOver(true)
       }, 1000)
     }  
   }
 
   const handleRestart = () => {
+    setIsCorrect(false)
+    setIsFalse(false)
     setCurrentDrawing(0)
     setScore(0)
     setShowGameOver(false)
-    setResponse('')
   }
   
   return (
@@ -45,11 +48,10 @@ function App() {
       <section className="drawing-container">
         {showGameOver ? ( <h2>GAME OVER</h2>) : (<img src={`/img/${drawings[currentDrawing].img}`} alt="drawing"/>)}  
       </section>
-      <section className="response-container">
-        {response}
-      </section>
+      {isCorrect && (<section className="response-container correct">Korrekt</section>)}
+      {isFalse && (<section className="response-container incorrect">Forkert</section>)}
       <section className="answer-container">
-        {showGameOver ? ( <button className="btn center" onClick={handleRestart}>Restart</button> ) : (data[currentDrawing].answers.map(answers => <button key={answers.text} className='btn' onClick={() => handleClick(answers.correct)}>{answers.text}</button>))}    
+        {showGameOver ? ( <button className="btn center" onClick={handleRestart}>Restart</button> ) : (drawings[currentDrawing].answers.map(answers => <button key={answers.text} className='btn' onClick={() => handleClick(answers.correct)}>{answers.text}</button>))}    
       </section>
       <section className="score-container">
         <aside className="circle">
