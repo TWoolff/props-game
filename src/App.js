@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react";
-import data from './assets/data';
+import { useState } from "react";
+import Drawing from "./components/Drawing";
+import Answer from "./components/Answer";
+import Score from "./components/Score";
+import DrawingProvider from "./store/DrawingProvider";
 
 function App() {
-  const [drawings] = useState(data)
   const [currentDrawing, setCurrentDrawing] = useState(0)
   const [score, setScore] = useState(0)
   const [isCorrect, setIsCorrect] = useState(false)
@@ -10,14 +12,14 @@ function App() {
   const [showGameOver, setShowGameOver] = useState(false)
 
   const handleClick = (correct) => {
-    if (correct) {
+    if(correct) {
       setIsCorrect(true)
       setScore(score + 1) 
     } else {
       setIsFalse(true)
     }
 
-    if (currentDrawing + 1 < drawings.length) {
+    if (currentDrawing + 1 < 33) {
       setTimeout(() => {
         setCurrentDrawing(currentDrawing + 1)
         setIsCorrect(false)
@@ -29,7 +31,7 @@ function App() {
         setIsFalse(false)
         setShowGameOver(true)
       }, 1000)
-    }  
+    } 
   }
 
   const handleRestart = () => {
@@ -39,25 +41,19 @@ function App() {
     setScore(0)
     setShowGameOver(false)
   }
-  
+
   return (
     <main className="App">
       <header>
         <h1>Filmquizzen</h1>
-      </header> 
-      <section className="drawing-container">
-        {showGameOver ? ( <h2>GAME OVER</h2>) : (<img src={`/img/${drawings[currentDrawing].img}`} alt="drawing"/>)}  
-      </section>
-      {isCorrect && (<section className="response-container correct">Korrekt</section>)}
-      {isFalse && (<section className="response-container incorrect">Forkert</section>)}
-      <section className="answer-container">
-        {showGameOver ? ( <button className="btn center" onClick={handleRestart}>Restart</button> ) : (drawings[currentDrawing].answers.map(answers => <button key={answers.text} className='btn' onClick={() => handleClick(answers.correct)}>{answers.text}</button>))}    
-      </section>
-      <section className="score-container">
-        <aside className="circle">
-          <h3>{score}/{data.length}</h3>
-        </aside>
-      </section>
+      </header>
+      <DrawingProvider>
+        <Drawing gameoverHandler={showGameOver} currentDrawing={currentDrawing}/>
+        {isCorrect && (<section className="response-container correct">Korrekt</section>)}
+        {isFalse && (<section className="response-container incorrect">Forkert</section>)}  
+        <Answer currentDrawing={currentDrawing} answerHandler={handleClick} gameoverHandler={showGameOver} restartHandler={handleRestart} />
+        <Score currentScore={score} />
+      </DrawingProvider>
     </main>
   );
 }
