@@ -1,7 +1,5 @@
-import React from "react";
+import React from "react"
 
-const DrawingsContext = React.createContext({
-  drawings: []
-});
+const DrawingsContext = React.createContext({})
 
-export default DrawingsContext;
+export default DrawingsContext
