@@ -18,13 +18,13 @@ const Answer = () => {
         ctx.setCurrentDrawing(ctx.currentDrawing + 1)
         ctx.setIsCorrect(false)
         ctx.setIsFalse(false)
-      }, 10) 
+      }, 1000) 
     } else {
       setTimeout(() => {
         ctx.setIsCorrect(false)
         ctx.setIsFalse(false)
         ctx.setShowGameOver(true)
-      }, 10)
+      }, 1000)
     } 
   }
 
