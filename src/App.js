@@ -1,9 +1,9 @@
-import { useState } from "react"
-import data from "./assets/data"
-import Drawing from "./components/Drawing"
-import Answer from "./components/Answer"
-import Score from "./components/Score"
-import DrawingsContext from "./store/drawings-context"
+import { useState } from 'react'
+import data from './assets/data'
+import Drawing from './components/Drawing'
+import Answer from './components/Answer'
+import Score from './components/Score'
+import DrawingsContext from './store/drawings-context'
 
 function App() {
   const [drawings] = useState(data)
@@ -26,7 +26,7 @@ function App() {
         <Score />
       </DrawingsContext.Provider>
     </main>
-  );
+  )
 }
 
-export default App;
+export default App

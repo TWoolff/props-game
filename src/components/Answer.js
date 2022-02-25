@@ -1,6 +1,6 @@
-import { useContext } from 'react';
-import DrawingsContext from '../store/drawings-context';
-import classes from './Answer.module.css';
+import { useContext } from 'react'
+import DrawingsContext from '../store/drawings-context'
+import classes from './Answer.module.css'
 
 const Answer = () => {
   const ctx = useContext(DrawingsContext)
@@ -44,7 +44,7 @@ const Answer = () => {
         <button key={answers.text} className="btn" onClick={() => handleClick(answers.correct)}>{answers.text}</button>))
       }    
     </section>
-  );
+  )
 }
  
-export default Answer;
+export default Answer
